@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PopularMuseumsAPI", "PopularMuseumsAPI.csproj", "{FBABB28D-A102-4514-8748-17B7E8203F94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FBABB28D-A102-4514-8748-17B7E8203F94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FBABB28D-A102-4514-8748-17B7E8203F94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FBABB28D-A102-4514-8748-17B7E8203F94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FBABB28D-A102-4514-8748-17B7E8203F94}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DBFF1A36-1B3B-497D-A53C-D781790D8CF4}
+	EndGlobalSection
+EndGlobal
