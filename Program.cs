@@ -1,5 +1,12 @@
+using PopularMuseumsAPI.Data;
+using PopularMuseumsAPI.Services.MuseumService;
+
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddDbContext<DataContext>();
+builder.Services.AddScoped<IMuseumService, MuseumService>();
+
+builder.Services.AddCors();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -12,6 +19,8 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin().WithExposedHeaders("*"));
 
 app.UseAuthorization();
 

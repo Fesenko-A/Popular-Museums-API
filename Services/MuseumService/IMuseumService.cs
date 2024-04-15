@@ -1,12 +1,14 @@
 ﻿using PopularMuseumsAPI.Models;
+using PopularMuseumsAPI.Models.DTO;
+using PopularMuseumsAPI.Utility;
 
-namespace PopularMuseumsAPI.Services.MuseumService {
+namespace PopularMuseumsAPI.Services.MuseumService
+{
     public interface IMuseumService {
-        Task<List<Museum>> GetAllMuseums();
-        Task<Museum?> GetById(int id);
-        Task<List<Museum>> SearchByName(string name);
-        Task<Museum?> UpdateMuseum(int id, MuseumDto museum);
-        Task<bool> DeleteMuseum(int id);
-        Task<Museum?> AddMuseum(MuseumDto museum);
+        Task<List<Museum>> GetAllMuseums(string? name);
+        Task<ErrorOr<Museum>> GetById(int id);
+        Task<ErrorOr<Museum>> UpdateMuseum(int id, MuseumDto museum);
+        Task<ErrorOr<bool>> DeleteMuseum(int id);
+        Task<ErrorOr<Museum>> AddMuseum(MuseumDto museum);
     }
 }

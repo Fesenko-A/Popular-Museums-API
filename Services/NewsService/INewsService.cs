@@ -1,6 +1,8 @@
 ﻿using PopularMuseumsAPI.Models;
+using PopularMuseumsAPI.Models.DTO;
 
-namespace PopularMuseumsAPI.Services.NewsService {
+namespace PopularMuseumsAPI.Services.NewsService
+{
     public interface INewsService {
         Task<List<News>> GetAllNews();
         Task<News> GetNewsById(int id);

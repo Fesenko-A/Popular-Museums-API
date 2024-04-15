@@ -1,6 +1,8 @@
 ﻿using PopularMuseumsAPI.Models;
+using PopularMuseumsAPI.Models.DTO;
 
-namespace PopularMuseumsAPI.Services.ImageService {
+namespace PopularMuseumsAPI.Services.ImageService
+{
     public interface IImageService {
         Task<List<Image>> GetAllImages();
         Task<List<Image>> GetByMuseumId(int museumId);
