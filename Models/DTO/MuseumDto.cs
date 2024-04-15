@@ -1,4 +1,4 @@
-﻿namespace PopularMuseumsAPI.Models {
+﻿namespace PopularMuseumsAPI.Models.DTO {
     public class MuseumDto {
         public string Name { get; set; }
         public string City { get; set; }

@@ -1,13 +1,14 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace PopularMuseumsAPI.Models {
+namespace PopularMuseumsAPI.Models
+{
     public class Image {
         [Key]
         public int ImageId { get; set; }
         public string ImageUrl { get; set; }
         public int MuseumId { get; set; }
         [ForeignKey(nameof(MuseumId))]
-        public MuseumDto Museum { get; set; }
+        public Museum Museum { get; set; }
     }
 }
