@@ -1,13 +1,13 @@
 ﻿using PopularMuseumsAPI.Models;
 using PopularMuseumsAPI.Models.DTO;
+using PopularMuseumsAPI.Utility;
 
-namespace PopularMuseumsAPI.Services.NewsService
-{
+namespace PopularMuseumsAPI.Services.NewsService {
     public interface INewsService {
         Task<List<News>> GetAllNews();
-        Task<News> GetNewsById(int id);
-        Task<News?> UpdateNews(int id, NewsDto news);
-        Task<bool> DeleteNews(int id);
-        Task<News> AddNews(NewsDto news);
+        Task<ErrorOr<News>> GetById(int id);
+        Task<ErrorOr<News>> UpdateNews(int id, NewsDto news);
+        Task<ErrorOr<bool>> DeleteNews(int id);
+        Task<ErrorOr<News>> AddNews(NewsDto news);
     }
 }
