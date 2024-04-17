@@ -26,7 +26,7 @@ namespace PopularMuseumsAPI.Services.MuseumService
             };
 
             try {
-                _context.Add(newMuseum);
+                _context.Museums.Add(newMuseum);
                 await _context.SaveChangesAsync();
             } catch (DbUpdateException) {
                 return new ErrorOr<Museum>("Error while creating museum");
@@ -58,10 +58,10 @@ namespace PopularMuseumsAPI.Services.MuseumService
             IQueryable<Museum> museums = _context.Museums.AsQueryable();
 
             if (!string.IsNullOrEmpty(name)) {
-                museums = museums.Where(x => x.Name == name);
+                museums = museums.Where(x => x.Name.Contains(name));
             }
 
-            var result = await museums.ToListAsync();
+            var result = await museums.OrderByDescending(x => x.VisitorsPerYear).ToListAsync();
             return result;
         }
 
@@ -92,10 +92,9 @@ namespace PopularMuseumsAPI.Services.MuseumService
             museumToUpdate.FoundationYear = museum.FoundationYear;
 
             try {
-                _context.Update(museumToUpdate);
+                _context.Museums.Update(museumToUpdate);
                 await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateException) {
+            } catch (DbUpdateException) {
                 return new ErrorOr<Museum>("Error while updating museum");
             }
 

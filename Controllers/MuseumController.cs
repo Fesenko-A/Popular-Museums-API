@@ -4,8 +4,7 @@ using PopularMuseumsAPI.Services.MuseumService;
 using PopularMuseumsAPI.Utility;
 using System.Net;
 
-namespace PopularMuseumsAPI.Controllers
-{
+namespace PopularMuseumsAPI.Controllers {
     [Route("api/[controller]/[action]")]
     [ApiController]
     public class MuseumController : ControllerBase {

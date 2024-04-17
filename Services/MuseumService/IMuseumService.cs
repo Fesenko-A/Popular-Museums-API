@@ -2,8 +2,7 @@
 using PopularMuseumsAPI.Models.DTO;
 using PopularMuseumsAPI.Utility;
 
-namespace PopularMuseumsAPI.Services.MuseumService
-{
+namespace PopularMuseumsAPI.Services.MuseumService {
     public interface IMuseumService {
         Task<List<Museum>> GetAllMuseums(string? name);
         Task<ErrorOr<Museum>> GetById(int id);
