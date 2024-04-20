@@ -20,6 +20,12 @@ namespace PopularMuseumsAPI.Controllers {
             return Ok(new ApiResponse(result));
         }
 
+        [HttpGet("{count:int}")]
+        public async Task<ActionResult<ApiResponse>> Get(uint count) {
+            var result = await _newsService.GetNews(count);
+            return Ok(new ApiResponse(result));
+        }
+
         [HttpGet("{id:int}")]
         public async Task<ActionResult<ApiResponse>> GetById(int id) {
             var result = await _newsService.GetById(id);

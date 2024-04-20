@@ -90,5 +90,10 @@ namespace PopularMuseumsAPI.Services.NewsService {
 
             return new ErrorOr<News>(updatedNews);
         }
+
+        public async Task<List<News>> GetNews(uint count) {
+            List<News> result = await _context.News.OrderByDescending(x => x.DatePosted).Take((int)count).ToListAsync();
+            return result;
+        }
     }
 }
