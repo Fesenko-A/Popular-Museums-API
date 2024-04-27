@@ -63,13 +63,15 @@ namespace PopularMuseumsAPI.Services.ImageService {
         }
 
         public async Task<ErrorOr<Image>> GetById(int id) {
-            Image? image = await _context.Images.FindAsync(id);
+            IQueryable<Image> image = _context.Images.Where(x => x.ImageId == id).Include(m => m.Museum);
 
             if (image == null) {
                 return new ErrorOr<Image>("Image not found");
             }
 
-            return new ErrorOr<Image>(image);
+            Image result = await image.FirstOrDefaultAsync();
+
+            return new ErrorOr<Image>(result);
         }
 
         public async Task<ErrorOr<Image>> UpdateImage(int id, ImageDto newImage) {
